@@ -68,3 +68,15 @@ for(let i=0; i<sectionsNumber; i++){
 
 let navList = document.querySelector('#navbar__list');
 navList.appendChild(fragment);
+
+
+// Add class 'active' to section when near top of viewport
+
+document.addEventListener('scroll',function(){
+  for(section of sections){
+    if(isInViewport(section)){
+      removeAllActiveSections();
+      section.classList.add('your-active-class');
+    }
+  }
+},{passive: true})

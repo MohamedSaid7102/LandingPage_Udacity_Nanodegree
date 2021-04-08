@@ -55,3 +55,16 @@ function correspondingSectionName(section){
  * Begin Main Functions
  * 
 */
+
+// build the nav
+for(let i=0; i<sectionsNumber; i++){
+  let newNavItem = document.createElement("li");; // new nav link
+  let sectionHeader = sections[i].dataset.nav;// to save the section heading to use it later
+  newNavItem.textContent = sectionHeader;
+  newNavItem.classList.add('menu__link');
+  sectionsLinks.push(newNavItem); // add this link to the links wrapper
+  fragment.appendChild(newNavItem);
+}
+
+let navList = document.querySelector('#navbar__list');
+navList.appendChild(fragment);

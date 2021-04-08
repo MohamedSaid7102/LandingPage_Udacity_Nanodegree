@@ -80,3 +80,17 @@ document.addEventListener('scroll',function(){
     }
   }
 },{passive: true})
+
+// Scroll to anchor ID using scrollTO event
+for(let i=0; i<sectionsNumber; i++){
+  sectionsLinks[i].addEventListener('click',() =>{
+    let targetedSection = correspondingSectionName(sectionsLinks[i]);
+    document.getElementById(targetedSection).scrollIntoView({ behavior: 'smooth' });
+  });
+}
+
+/**
+ * End Main Functions
+ * Begin Events
+ * 
+*/

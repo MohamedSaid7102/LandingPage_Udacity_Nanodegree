@@ -105,6 +105,45 @@ function showNavOnScroll(){
     }, false);
 }
 
+// scroll to top button design
+document.querySelector('.scrollTop').addEventListener('click',()=>{
+  window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+});
+
+// to show toTop button while scrolling down
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos < currentScrollPos) {
+    document.querySelector(".scrollTop").style.opacity = 0;
+  } else {
+    document.querySelector(".scrollTop").style.opacity = 1;
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+const isHover = e => e.parentElement.querySelector(':hover') === e;    
+
+const myButton = document.getElementById('scrollTop');
+document.addEventListener('mousemove', function checkHover() {
+  const hovered = isHover(myButton);
+  if (hovered !== checkHover.hovered) {
+    if(hovered){
+      document.querySelector(".scrollTop").style.opacity = 0;
+      myButton.classList.remove('fas');
+      myButton.classList.add('far');
+      document.querySelector(".scrollTop").style.opacity = 0.5;
+    }
+    else{
+      document.querySelector(".scrollTop").style.opacity = 0;
+      myButton.classList.remove('far');
+      myButton.classList.add('fas');
+      document.querySelector(".scrollTop").style.opacity = 1;
+    }
+    checkHover.hovered = hovered;
+  }
+});
+
 /**
  * End Main Functions
  * Begin Events

@@ -258,3 +258,16 @@ section.your-active-class .landing__container::after {
 .active--link {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+/* link to top style */
+.scrollTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+#scrollTop {
+  transition: all 100ms ease-in-out;
+}

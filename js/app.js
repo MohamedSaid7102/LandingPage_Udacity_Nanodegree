@@ -92,15 +92,31 @@ for(let i=0; i<sectionsNumber; i++){
 }
 
 // hide nav bar on scrolling
+
+const navIsHover = e => e.parentElement.querySelector(':hover') === e;    
+const navBar = document.querySelector(".navbar__menu");
+
 function showNavOnScroll(){
   var timer = null; // this is like a flag to determine if scrolling or not
   window.addEventListener('scroll', function() {
-    document.querySelector(".navbar__menu").style.top = "0"; // default state is visability
+    // collabse if not
+    var navBar = document.querySelector(".navbar__menu");
+    if (navBar.classList.contains("navbar__menu")) {
+      if(navBar.classList.contains("responsive"))
+        navBar.classList.remove("responsive");
+    }
+    // function logic
+    document.querySelector(".navbar__menu").style.opacity = 1; // default state is visability
+    document.querySelector(".navbar__menu").style.display = "block"; // default state is visability
     if(timer !== null) {
       clearTimeout(timer);      
     }
     timer = setTimeout(function() {
-      document.querySelector(".navbar__menu").style.top = "-60px";
+      const hovered = navIsHover(navBar);
+      if(!hovered){
+        document.querySelector(".navbar__menu").style.opacity = 0;
+        document.querySelector(".navbar__menu").style.display = "none"; // default state is visability
+      }
       }, 3000);
     }, false);
 }
@@ -144,6 +160,18 @@ document.addEventListener('mousemove', function checkHover() {
   }
 });
 
+// making the navbar responsive 
+function responsiveNavBar() {
+  var navBar = document.querySelector(".navbar__menu");
+  if (navBar.classList.contains("navbar__menu")) {
+    if(navBar.classList.contains("responsive"))
+      navBar.classList.remove("responsive");
+    else
+      navBar.classList.add("responsive");
+  }
+}
+
+document.querySelector('#respIcon').addEventListener('click',responsiveNavBar);
 /**
  * End Main Functions
  * Begin Events

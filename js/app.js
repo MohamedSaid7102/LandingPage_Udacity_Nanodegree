@@ -39,9 +39,10 @@ function isInViewport(element) {
 }
 
 // to remove 'your-active-class' class from all of the sections
-function removeAllActiveSections(){
+function removeActives(){
   for(let i=0; i<sectionsNumber;i++){
     sections[i].classList.remove('your-active-class');
+    sectionsLinks[i].classList.remove('active--link');
   }
 }
 
@@ -73,10 +74,11 @@ navList.appendChild(fragment);
 // Add class 'active' to section when near top of viewport
 
 document.addEventListener('scroll',function(){
-  for(section of sections){
-    if(isInViewport(section)){
-      removeAllActiveSections();
-      section.classList.add('your-active-class');
+  for(let i=0; i<sectionsNumber ;i++){
+    if(isInViewport(sections[i])){
+      removeActives();
+      sections[i].classList.add('your-active-class');
+      sectionsLinks[i].classList.add('active--link');
     }
   }
 },{passive: true})

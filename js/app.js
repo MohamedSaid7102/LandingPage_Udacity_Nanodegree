@@ -37,7 +37,6 @@ function isInViewport(element) {
 
   );
 }
-
 // to remove 'your-active-class' class from all of the sections
 function removeActives(){
   for(let i=0; i<sectionsNumber;i++){
@@ -74,6 +73,7 @@ navList.appendChild(fragment);
 // Add class 'active' to section when near top of viewport
 
 document.addEventListener('scroll',function(){
+  removeActives(); 
   for(let i=0; i<sectionsNumber ;i++){
     if(isInViewport(sections[i])){
       removeActives();
@@ -128,9 +128,11 @@ document.querySelector('.scrollTop').addEventListener('click',()=>{
 
 // to show toTop button while scrolling down
 var prevScrollpos = window.pageYOffset;
+document.querySelector(".scrollTop").style.display = "none"; // to hide it by default
 window.onscroll = function() {
+  document.querySelector(".scrollTop").style.display = "block";
   var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos < currentScrollPos) {
+  if (prevScrollpos > currentScrollPos) {
     document.querySelector(".scrollTop").style.opacity = 0;
   } else {
     document.querySelector(".scrollTop").style.opacity = 1;

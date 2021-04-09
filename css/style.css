@@ -22,6 +22,67 @@ body {
 }
 
 /* Typeography General*/
+.bannerContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner__img {
+  max-width: 100%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.banner__heading {
+  text-align: center;
+  position: absolute;
+  width: max-content;
+  text-shadow: 0 0 5px #000;
+  letter-spacing: 12px;
+  line-height: 5rem;
+}
+.banner__heading__message {
+  font-size: 50%;
+  position: relative;
+  bottom: -2rem;
+}
+
+.small--txt {
+  font-size: 40%;
+  font-weight: 200;
+  padding: 0;
+  margin: 0;
+}
+.message--variation-blue {
+  color: rgb(167, 231, 250);
+  transition: color 250ms ease-in-out;
+  cursor: default;
+  font-size: 150%;
+  position: relative;
+  bottom: -9px;
+}
+.message--variation-blue:hover {
+  color: rgb(126, 225, 255);
+}
+@media screen and (max-width: 1145px) {
+  .banner__heading {
+    font-size: 5rem;
+  }
+}
+@media screen and (max-width: 856px) {
+  .banner__heading {
+    font-size: 3rem;
+    line-height: 3rem;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .banner__heading {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
 h1 {
   font-family: "Fira Sans", sans-serif;
   font-size: 3em;

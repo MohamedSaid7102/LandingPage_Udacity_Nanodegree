@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Manipulating the DOM</title>
+    <title>Landing Page</title>
     <!-- Load Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap"
@@ -23,6 +23,15 @@
   <body>
     <!-- HTML Follows BEM naming conventions 
   IDs are only used for sections to connect menu achors to sections -->
+    <div class="bannerContainer">
+      <h1 class="banner__heading">
+        welcome <br /><span class="small--txt">to</span><br />
+        <span class="message--variation-blue">&Uopf;</span>dacity Project-1
+        <br />
+        <span class="banner__heading__message"><span>&Eopf;</span>njoy ..</span>
+      </h1>
+      <img src="images/banner.jpg" alt="background image" class="banner__img" />
+    </div>
     <header class="page__header">
       <nav class="navbar__menu">
         <!-- Navigation starts as empty UL that will be populated with JS -->
@@ -33,9 +42,6 @@
       </nav>
     </header>
     <main>
-      <header class="main__hero">
-        <h1>Landing Page</h1>
-      </header>
       <!-- Each Section has an ID (used for the anchor) and 
     a data attribute that will populate the li node.
     Adding more sections will automatically populate nav.

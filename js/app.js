@@ -91,8 +91,30 @@ for(let i=0; i<sectionsNumber; i++){
   });
 }
 
+// hide nav bar on scrolling
+function showNavOnScroll(){
+  var timer = null; // this is like a flag to determine if scrolling or not
+  window.addEventListener('scroll', function() {
+    document.querySelector(".navbar__menu").style.top = "0"; // default state is visability
+    if(timer !== null) {
+      clearTimeout(timer);      
+    }
+    timer = setTimeout(function() {
+      document.querySelector(".navbar__menu").style.top = "-60px";
+      }, 3000);
+    }, false);
+}
+
 /**
  * End Main Functions
  * Begin Events
  * 
 */
+
+
+/**
+ * End Events
+ * Start invoking functions
+ * 
+ */
+ showNavOnScroll();

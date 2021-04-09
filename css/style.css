@@ -66,6 +66,9 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu {
+  position: fixed;
+  transition: top 350ms ease-in-out;
+  width: 99vw;
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   background-color: rgba(0, 13, 60, 0.6);

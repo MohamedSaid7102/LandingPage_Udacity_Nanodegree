@@ -103,30 +103,33 @@ for(let i=0; i<sectionsNumber; i++){
 }
 
 // hide nav bar on scrolling
-
 const navIsHover = e => e.parentElement.querySelector(':hover') === e;    
 const navBar = document.querySelector(".navbar__menu");
 
 function showNavOnScroll(){
-  var timer = null; // this is like a flag to determine if scrolling or not
+  let timer = null; // this is like a flag to determine if scrolling or not
+  let showNav = { "display": "block", "opacity": "1"};
+  let hideNav = { "display": "none", "opacity": "0"};
+  let navBar = document.querySelector(".navbar__menu");
+  let sideNav = document.querySelector('.icon-bar');
+
   window.addEventListener('scroll', function() {
     // collabse if not
-    var navBar = document.querySelector(".navbar__menu");
     if (navBar.classList.contains("navbar__menu")) {
       if(navBar.classList.contains("responsive"))
         navBar.classList.remove("responsive");
     }
     // function logic
-    document.querySelector(".navbar__menu").style.opacity = 1; // default state is visability
-    document.querySelector(".navbar__menu").style.display = "block"; // default state is visability
+    Object.assign(navBar.style,showNav); // default state is visability
+    Object.assign(sideNav.style,hideNav); // default state is to be not visabil
     if(timer !== null) {
       clearTimeout(timer);      
     }
     timer = setTimeout(function() {
       const hovered = navIsHover(navBar);
       if(!hovered){
-        document.querySelector(".navbar__menu").style.opacity = 0;
-        document.querySelector(".navbar__menu").style.display = "none"; // default state is visability
+        Object.assign(navBar.style,hideNav); // default state is visability
+        Object.assign(sideNav.style,showNav); // default state is to be not visabil
       }
       }, 3000);
     }, false);

@@ -22,6 +22,8 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    <!-- for AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- page icon -->
     <link rel="icon" href="images/logo_img.ico" />
     <!-- Load Styles -->
@@ -32,7 +34,7 @@
   IDs are only used for sections to connect menu achors to sections -->
     <!-- Hero -->
     <div class="bannerContainer">
-      <h1 class="banner__heading">
+      <h1 class="banner__heading" data-aos="fade-up" data-aos-duration="800">
         welcome <br /><span class="small--txt">to</span><br />
         <span class="message--variation-blue">&Uopf;</span>dacity Project-1
         <br />
@@ -64,10 +66,22 @@
     Adding more sections will automatically populate nav.
     The first section is set to active class by default -->
       <!-- Notes:
-              1. don't forget to set a class name equal to the heading content without spacing or it won't scroll into view on click-->
+              1. don't forget to set a class name equal to the heading content without spacing or it won't scroll into view on click
+      2. don't forget to add AOS data attribute to your new section to animate
+      it
+      -->
+      <!-- section - 1 Introduction & Company feature -->
       <section id="section1" data-nav="Section 1" class="your-active-class">
         <div class="landing__container">
-          <h2 class="sectionHeader HTML">HTML</h2>
+          <h2
+            class="sectionHeader About"
+            data-aos="fade-left"
+            data-aos-duration="500"
+          >
+            About
+          </h2>
+          <p>Key features of our company</p>
+
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
             fermentum metus faucibus lectus pharetra dapibus. Suspendisse
@@ -78,136 +92,227 @@
             gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
             Cras eu tincidunt arcu.
           </p>
+          <ul>
+            <li>Gummi bears muffin macaroon</li>
+            <li>jujubes candy canes</li>
+            <li>bonbon marzipan sweet roll</li>
+          </ul>
+          <p>
+            Chocolate bar chocolate tootsie roll toffee tart sweet roll brownie
+            sweet biscuit. Jelly beans ice cream toffee. Pudding chocolate sweet
+            roll cheesecake. Cookie pastry tart bonbon pie.
+          </p>
         </div>
       </section>
       <section id="section2" data-nav="Section 2">
         <div class="landing__container">
-          <h2 class="sectionHeader CSS">CSS</h2>
+          <h2
+            class="sectionHeader CSS"
+            data-aos="fade-right"
+            data-aos-duration="500"
+          >
+            CSS
+          </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            fermentum metus faucibus lectus pharetra dapibus. Suspendisse
-            potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget
-            lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed
-            convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla
-            eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam
-            nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis
-            lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a
-            tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus
-            vitae elit. Integer nec libero venenatis libero ultricies molestie
-            semper in tellus. Sed congue et odio sed euismod.
+            Powder cotton candy gummies oat cake powder. Ice cream brownie
+            cookie toffee powder carrot cake. Cheesecake cotton candy topping.
+            Tootsie roll marzipan jelly macaroon bonbon dragée. Caramels topping
+            jujubes candy canes jelly wafer pie candy toffee. Gingerbread
+            topping candy canes gummi bears.
           </p>
 
           <p>
-            Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar
-            gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
-            Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum
-            consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget
-            elementum tortor mollis non.
+            gummies cake cookie. Topping pudding sweet marzipan halvah bonbon
+            pudding lollipop. Powder tiramisu cheesecake sugar plum jelly
+            chocolate topping. Jelly-o bear claw wafer tootsie roll chocolate
+            bar. Pie bonbon sesame snaps toffee jelly-o. Croissant jelly-o
+            gummies muffin. Lollipop chupa chups cotton candy halvah jelly sugar
+            plum candy canes chupa chups caramels. Jelly beans carrot cake
+            chocolate bar macaroon toffee fruitcake cheesecake tootsie roll
+            marshmallow. Sweet roll chocolate donut fruitcake ice cream danish
+            jelly beans.
           </p>
+          <a
+            class="callToAction toRight"
+            data-aos="zoom-in-up"
+            data-aos-duration="500"
+            >Enroll Now</a
+          >
         </div>
       </section>
       <section id="section3" data-nav="Section 3">
         <div class="landing__container">
-          <h2 class="sectionHeader JS">JS</h2>
+          <h2
+            class="sectionHeader JS"
+            data-aos="fade-left"
+            data-aos-duration="500"
+          >
+            JS
+          </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            fermentum metus faucibus lectus pharetra dapibus. Suspendisse
-            potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget
-            lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed
-            convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla
-            eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam
-            nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis
-            lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a
-            tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus
-            vitae elit. Integer nec libero venenatis libero ultricies molestie
-            semper in tellus. Sed congue et odio sed euismod.
+            Caramels marzipan powder. Carrot cake chocolate sweet roll fruitcake
+            candy brownie soufflé pastry topping. Cake liquorice cookie bear
+            claw marshmallow caramels sweet. Sweet croissant gingerbread
+            chocolate bar soufflé gummi bears. Tootsie roll chupa chups bonbon
+            gingerbread powder pudding biscuit croissant marzipan.
           </p>
 
           <p>
-            Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar
-            gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
-            Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum
-            consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget
-            elementum tortor mollis non.
+            Chupa chups brownie toffee. Dragée fruitcake pie marshmallow pie
+            topping jujubes. Liquorice cake bonbon fruitcake tootsie roll
+            dessert caramels gummi bears. Jelly-o sweet roll soufflé. Wafer
+            icing chocolate chupa chups sugar plum fruitcake. Tart oat cake
+            sesame snaps muffin tiramisu muffin muffin. Caramels jelly beans
+            biscuit cotton candy. Cake cotton candy wafer gummi bears topping
+            chupa chups. Chupa chups cheesecake pastry tootsie roll marzipan.
           </p>
+          <a
+            class="callToAction toLeft"
+            data-aos="zoom-in-up"
+            data-aos-duration="500"
+            >Enroll Now</a
+          >
         </div>
       </section>
       <section id="section4" data-nav="Section 4">
         <div class="landing__container">
-          <h2 class="sectionHeader Advanceyourcareer">Advance your career</h2>
+          <h2
+            class="sectionHeader Advanceyourcareer"
+            data-aos="fade-right"
+            data-aos-duration="500"
+          >
+            Advance your career
+          </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            fermentum metus faucibus lectus pharetra dapibus. Suspendisse
-            potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget
-            lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed
-            convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla
-            eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam
-            nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis
-            lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a
-            tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus
-            vitae elit. Integer nec libero venenatis libero ultricies molestie
-            semper in tellus. Sed congue et odio sed euismod.
+            Topping apple pie jelly-o cake toffee cheesecake sweet roll sweet
+            brownie. Cake sesame snaps dessert lemon drops tiramisu cake
+            macaroon jelly lemon drops. Chocolate bar cake cake toffee ice cream
+            toffee halvah candy sesame snaps.
           </p>
 
           <p>
-            Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar
-            gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
-            Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum
-            consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget
-            elementum tortor mollis non.
+            Donut tiramisu biscuit sweet sesame snaps. Liquorice oat cake
+            chocolate cake marzipan apple pie cake danish sugar plum. Cotton
+            candy danish danish tiramisu. Ice cream jujubes caramels chocolate
+            cake pie. Lollipop pudding marzipan tootsie roll chocolate bar
+            fruitcake marshmallow toffee. Ice cream gummies danish tiramisu
+            pudding. Chocolate cake caramels liquorice. Cookie carrot cake cake
+            marshmallow croissant cheesecake cupcake bear claw pie. Chocolate
+            cake tootsie roll cake tart chupa chups sesame snaps gingerbread
+            caramels. Cheesecake tootsie roll dessert caramels.
           </p>
+          <a
+            class="callToAction toRight"
+            data-aos="zoom-in-up"
+            data-aos-duration="500"
+            >Learn more</a
+          >
         </div>
       </section>
       <section id="section5" data-nav="Section 5">
-        <div class="landing__container">
-          <h2 class="sectionHeader References">References</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            fermentum metus faucibus lectus pharetra dapibus. Suspendisse
-            potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget
-            lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed
-            convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla
-            eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam
-            nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis
-            lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a
-            tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus
-            vitae elit. Integer nec libero venenatis libero ultricies molestie
-            semper in tellus. Sed congue et odio sed euismod.
-          </p>
-
-          <p>
-            Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar
-            gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
-            Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum
-            consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget
-            elementum tortor mollis non.
-          </p>
+        <div class="landing__container feature">
+          <h2
+            class="sectionHeader Features"
+            data-aos="fade-down"
+            data-aos-duration="500"
+          >
+            Features
+          </h2>
+          <div class="featuresContainer">
+            <!-- 1 -->
+            <div
+              class="featureWrabber"
+              data-aos="fade-up-left"
+              data-aos-delay="200"
+            >
+              <i class="fas fa-laptop-code"></i>
+              <h4>Codinig style</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+                quo?
+              </p>
+            </div>
+            <!-- 2 -->
+            <div
+              class="featureWrabber"
+              data-aos="fade-up-left"
+              data-aos-delay="400"
+            >
+              <i class="fas fa-helicopter"></i>
+              <h4>Fast Result</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+                quo?
+              </p>
+            </div>
+            <!-- 3 -->
+            <div
+              class="featureWrabber"
+              data-aos="fade-up-left"
+              data-aos-delay="600"
+            >
+              <i class="fas fa-network-wired"></i>
+              <h4>community</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+                quo?
+              </p>
+            </div>
+            <!-- 4 -->
+            <div
+              class="featureWrabber"
+              data-aos="fade-up-left"
+              data-aos-delay="800"
+            >
+              <i class="fas fa-power-off"></i>
+              <h4>Totally customized</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+                quo?
+              </p>
+            </div>
+          </div>
+          <a
+            class="callToAction callToAction--outline"
+            data-aos="zoom-in-up"
+            data-aos-duration="500"
+            >Start Now</a
+          >
         </div>
       </section>
       <section id="section6" data-nav="Section 6">
         <div class="landing__container">
-          <h2 class="sectionHeader Contact">Contact</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
-            fermentum metus faucibus lectus pharetra dapibus. Suspendisse
-            potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget
-            lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed
-            convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla
-            eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam
-            nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis
-            lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a
-            tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus
-            vitae elit. Integer nec libero venenatis libero ultricies molestie
-            semper in tellus. Sed congue et odio sed euismod.
-          </p>
+          <h2
+            class="sectionHeader Contact"
+            data-aos="fade-right"
+            data-aos-duration="500"
+          >
+            Contact
+          </h2>
+          <div class="info">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              fermentum metus faucibus lectus pharetra dapibus. Suspendisse
+              potenti. Aenean aliquam elementum mi.
+            </p>
 
-          <p>
-            Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar
-            gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
-            Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum
-            consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget
-            elementum tortor mollis non.
-          </p>
+            <p>
+              Aliquam a convallis cus purus. Vestibulum fermentum consectetur
+              porttitor. Suspendisse imperdiet porttitor tortor, eget elementum
+              tortor mollis non.
+            </p>
+
+            <h4>Address</h4>
+            <p>Kafr Tah - Quisna - EL-Menofia</p>
+            <h4>Phone</h4>
+            <p>01096787085</p>
+            <h4>Developers</h4>
+            <ul style="list-style: lower-greek">
+              <li>Udacity</li>
+              <li>F.W.D</li>
+              <li>Mohamed Shelf</li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
@@ -215,6 +320,10 @@
       <p>&copy Mohamed Shelf & Udacity</p>
     </footer>
     <i id="scrollTop" class="fas fa-arrow-alt-circle-up scrollTop"></i>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="js/app.js"></script>
   </body>
 </html>

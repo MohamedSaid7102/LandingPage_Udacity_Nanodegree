@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Landing Page</title>
     <!-- Load Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=optional"
       rel="stylesheet"
     />
     <!-- font awesome icons -->
@@ -28,7 +29,7 @@
         welcome <br /><span class="small--txt">to</span><br />
         <span class="message--variation-blue">&Uopf;</span>dacity Project-1
         <br />
-        <span class="banner__heading__message"><span>&Eopf;</span>njoy ..</span>
+        <span class="banner__heading__message"><span>&Eopf;</span>njoy..</span>
       </h1>
       <img src="images/banner.jpg" alt="background image" class="banner__img" />
     </div>
@@ -46,35 +47,26 @@
     a data attribute that will populate the li node.
     Adding more sections will automatically populate nav.
     The first section is set to active class by default -->
+      <!-- Notes:
+              1. don't forget to set a class name equal to the heading content without spacing or it won't scroll into view on click-->
       <section id="section1" data-nav="Section 1" class="your-active-class">
         <div class="landing__container">
-          <h2>Section 1</h2>
+          <h2 class="sectionHeader HTML">HTML</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
             fermentum metus faucibus lectus pharetra dapibus. Suspendisse
-            potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget
-            lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed
-            convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla
-            eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam
-            nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis
-            lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a
-            tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus
-            vitae elit. Integer nec libero venenatis libero ultricies molestie
-            semper in tellus. Sed congue et odio sed euismod.
           </p>
 
           <p>
             Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar
             gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam.
-            Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum
-            consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget
-            elementum tortor mollis non.
+            Cras eu tincidunt arcu.
           </p>
         </div>
       </section>
       <section id="section2" data-nav="Section 2">
         <div class="landing__container">
-          <h2>Section 2</h2>
+          <h2 class="sectionHeader CSS">CSS</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
             fermentum metus faucibus lectus pharetra dapibus. Suspendisse
@@ -100,7 +92,7 @@
       </section>
       <section id="section3" data-nav="Section 3">
         <div class="landing__container">
-          <h2>Section 3</h2>
+          <h2 class="sectionHeader JS">JS</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
             fermentum metus faucibus lectus pharetra dapibus. Suspendisse
@@ -126,7 +118,7 @@
       </section>
       <section id="section4" data-nav="Section 4">
         <div class="landing__container">
-          <h2>Section 4</h2>
+          <h2 class="sectionHeader Advanceyourcareer">Advance your career</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
             fermentum metus faucibus lectus pharetra dapibus. Suspendisse
@@ -152,7 +144,7 @@
       </section>
       <section id="section5" data-nav="Section 5">
         <div class="landing__container">
-          <h2>Section 5</h2>
+          <h2 class="sectionHeader References">References</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
             fermentum metus faucibus lectus pharetra dapibus. Suspendisse
@@ -178,7 +170,7 @@
       </section>
       <section id="section6" data-nav="Section 6">
         <div class="landing__container">
-          <h2>Section 6</h2>
+          <h2 class="sectionHeader Contact">Contact</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
             fermentum metus faucibus lectus pharetra dapibus. Suspendisse

@@ -25,7 +25,10 @@ var fragment = document.createDocumentFragment(); // to avoid many reflows and r
  * Start Helper Functions
  * 
 */
-
+// to get the corresponding node for a single html collection
+function fromHTMLCollectionToNode(HTMLCollection){
+  return [...HTMLCollection][0];
+}
 //  to detect if an element is in the view port or not
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
@@ -50,6 +53,13 @@ function correspondingSectionName(section){
   return section.innerText.replace(/\s/g,'').toLowerCase();
 }
 
+// to return corresponding node from HTML Collection to the node
+function getNode(item){
+  let linkName = item.textContent; //first get the link name
+  let correspondingSecHeading = document.getElementsByClassName(linkName.replace(/\s/g,'')); // get the section but this is an html collection, first we have to converst it to and array and access the first element to get it's parent
+  return fromHTMLCollectionToNode(correspondingSecHeading); // to get the node insted of html collection
+}
+
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -59,7 +69,7 @@ function correspondingSectionName(section){
 // build the nav
 for(let i=0; i<sectionsNumber; i++){
   let newNavItem = document.createElement("li");; // new nav link
-  let sectionHeader = sections[i].dataset.nav;// to save the section heading to use it later
+  let sectionHeader = sections[i].querySelector('.sectionHeader').innerText;// to save the section heading to use it later
   newNavItem.textContent = sectionHeader;
   newNavItem.classList.add('menu__link');
   sectionsLinks.push(newNavItem); // add this link to the links wrapper
@@ -86,8 +96,9 @@ document.addEventListener('scroll',function(){
 // Scroll to anchor ID using scrollTO event
 for(let i=0; i<sectionsNumber; i++){
   sectionsLinks[i].addEventListener('click',() =>{
-    let targetedSection = correspondingSectionName(sectionsLinks[i]);
-    document.getElementById(targetedSection).scrollIntoView({ behavior: 'smooth' });
+    let correspondingNode = getNode(sectionsLinks[i]);
+    let targetedSectionID = correspondingNode.parentNode.parentNode.id;
+    document.getElementById(targetedSectionID).scrollIntoView({ behavior: 'smooth' });
   });
 }
 

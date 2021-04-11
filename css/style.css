@@ -130,6 +130,9 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+.fa.fa-bars {
+  color: #555;
+}
 .navbar__menu {
   position: fixed;
   transition: top 350ms ease-in-out;

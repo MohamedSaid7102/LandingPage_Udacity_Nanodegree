@@ -19,7 +19,7 @@ let sections = [...document.querySelectorAll('[data-nav]')]; //  all the section
 let sectionsLinks = []; // count number of sections
 
 let sectionsNumber = sections.length;
-var fragment = document.createDocumentFragment(); // to avoid many reflows and repaints
+let fragment = document.createDocumentFragment(); // to avoid many reflows and repaints
 
 /**
  * End Global Variables
@@ -81,7 +81,8 @@ for (let i = 0; i < sectionsNumber; i++) {
 }
 
 let navList = document.querySelector('#navbar__list');
-navList.appendChild(fragment); // Add class 'active' to section when near top of viewport
+navList.appendChild(fragment); 
+// Add class 'active' to section when near top of viewport
 
 document.addEventListener('scroll', function () {
   removeActives();
@@ -142,10 +143,14 @@ function showNavOnScroll() {
 
     timer = setTimeout(function () {
       const hovered = navIsHover(navBar);
+      const topOfPage = document.getElementById('topOfPage');
 
-      if (!hovered) {
+      if (!hovered && !isInViewport(topOfPage)) {
         Object.assign(navBar.style, hideNav); // default state is visability
 
+        Object.assign(sideNav.style, showNav); // default state is to be not visabil
+      }
+      if(isInViewport(topOfPage)){
         Object.assign(sideNav.style, showNav); // default state is to be not visabil
       }
     }, 3000);
@@ -161,12 +166,12 @@ document.querySelector('.scrollTop').addEventListener('click', () => {
   });
 }); // to show toTop button while scrolling down
 
-var prevScrollpos = window.pageYOffset;
+let prevScrollpos = window.pageYOffset;
 document.querySelector(".scrollTop").style.display = "none"; // to hide it by default
 
 window.onscroll = function () {
   document.querySelector(".scrollTop").style.display = "block";
-  var currentScrollPos = window.pageYOffset;
+  let currentScrollPos = window.pageYOffset;
 
   if (prevScrollpos > currentScrollPos) {
     document.querySelector(".scrollTop").style.opacity = 0;
@@ -201,7 +206,7 @@ document.addEventListener('mousemove', function checkHover() {
 }); // making the navbar responsive 
 
 function responsiveNavBar() {
-  var navBar = document.querySelector(".navbar__menu");
+  let navBar = document.querySelector(".navbar__menu");
 
   if (navBar.classList.contains("navbar__menu")) {
     if (navBar.classList.contains("responsive")) navBar.classList.remove("responsive");else navBar.classList.add("responsive");
